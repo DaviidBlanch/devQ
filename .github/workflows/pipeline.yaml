@@ -4,9 +4,18 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
+    types: [opened, synchronize]
 
 jobs:
-  deploy:
+  avoid_reduncy:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Cancel Previous Redundant Builds
+        uses: styfle/cancel-workflow-action
+  lint:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
@@ -16,10 +25,33 @@ jobs:
         with:
           node-version: 16
       - name: Install dependencies
-        run: npm install --no-audit --no-fund --no-optional 
+        run: npm ci
       - name: esLint
         run: npm run eslint
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install dependencies
+        run: npm ci
       - name: Build
         run: npm run build
+      - uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          path: dist
+  deploy:
+    needs: [lint, build]
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: Deploy
+        if: ${{ github.event.name == 'push' }}
         run: echo 'Deploy'
