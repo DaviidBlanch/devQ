@@ -24,6 +24,8 @@ module.exports = {
       { allowConstantExport: true },
     ],
     'react/react-in-jsx-scope': 'off',
-    'react/prop-types': 'off'
+    'react/prop-types': 'off',
+    '@typescript-eslint/prefer-nullish-coalescing': 'off',
+    '@typescript-eslint/strict-boolean-expressions': 'off'
   },
 }
