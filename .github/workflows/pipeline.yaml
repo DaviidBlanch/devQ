@@ -1,4 +1,4 @@
-name: Deploy devQ
+name: devQ
 
 on:
   push:

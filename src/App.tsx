@@ -1,11 +1,16 @@
 import './App.css'
-import Title from './components/Title'
+import Home from './components/Home'
+import Navegation from './components/Navegation'
 
 function App() {
   return (
-    <main className='m-auto max-w-4xl'>
-      <Title />
-    </main>
+    <div>
+      <Navegation />
+      <main>
+        <Home />
+      </main>
+    </div>
+
   )
 }
 
