@@ -1,14 +1,11 @@
-import { LogoIcon, UserProfileIcon } from "../assets/Icons";
+import { UserProfileIcon } from "../assets/Icons";
 
 export default function Home() {
     return (
-        <div className="relative overflow-y-scroll h-[calc(100vh-55px)]">
-            <nav className=" w-full z-20 top-0 left-0 rounded-lg bg-transparent mb-2">
-                <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                    <div className="flex items-center">
-                        <LogoIcon />
-                        <span className="ml-2 self-center text-2xl font-semibold whitespace-nowrap">devQ</span>
-                    </div>
+        <div className="relative overflow-y-scroll h-[calc(100vh-40px)] p-4">
+            <nav className=" w-full z-20 top-0 left-0 rounded-lg bg-transparent mb-2 pb-2">
+                <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto pl-0">
+                    <span className="self-center text-2xl font-semibold whitespace-nowrap">devQ</span>
                     <UserProfileIcon />
                 </div>
             </nav>
