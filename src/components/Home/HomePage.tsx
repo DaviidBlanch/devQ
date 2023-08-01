@@ -1,6 +1,7 @@
 import { useState } from "react";
-import NavBar from "./Home/NavBar";
-import HomeBody from "./HomeBody";
+import NavBar from "./NavBar";
+import NavCompanies from "./Companies/NavCompanies";
+import Companies from "./Companies/Companies";
 
 export default function HomePage() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -16,7 +17,8 @@ export default function HomePage() {
         >
             <NavBar scroll={isScrolled} />
             <main className="p-4 px-6 pt-1">
-                <HomeBody />
+                <NavCompanies />
+                <Companies />
             </main>
         </div >
     )

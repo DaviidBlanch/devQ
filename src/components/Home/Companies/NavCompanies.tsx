@@ -1,4 +1,4 @@
-export default function NavSection() {
+export default function NavCompanies() {
     return (
         <nav className="flex items-center justify-between">
             <div className="flex items-center justify-start">

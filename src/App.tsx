@@ -1,5 +1,5 @@
 import './App.css'
-import HomePage from './components/HomePage'
+import HomePage from './components/Home/HomePage'
 import SideBar from './components/SideBar'
 
 function App() {
@@ -12,7 +12,6 @@ function App() {
         </div>
       </main>
     </div>
-
   )
 }
 
