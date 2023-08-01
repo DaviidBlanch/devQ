@@ -1,8 +1,8 @@
 import { useState } from "react";
-import NavHome from "./NavHome";
-import Questions from "./Questions";
+import NavBar from "./Home/NavBar";
+import HomeBody from "./HomeBody";
 
-export default function Home() {
+export default function HomePage() {
     const [isScrolled, setIsScrolled] = useState(false);
 
     const handleScroll = (event: React.UIEvent<HTMLDivElement>) => {
@@ -14,9 +14,9 @@ export default function Home() {
             className="relative overflow-y-scroll will-change-scroll h-[calc(100vh-20px)] p-0 pb-0 "
             onScroll={handleScroll}
         >
-            <NavHome scroll={isScrolled} />
-            <main className="p-4 px-6 pt-3">
-                <Questions />
+            <NavBar scroll={isScrolled} />
+            <main className="p-4 px-6 pt-1">
+                <HomeBody />
             </main>
         </div >
     )
