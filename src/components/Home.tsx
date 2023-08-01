@@ -15,7 +15,7 @@ export default function Home() {
             onScroll={handleScroll}
         >
             <NavHome scroll={isScrolled} />
-            <main className="p-4 pt-3">
+            <main className="p-4 px-6 pt-3">
                 <Questions />
             </main>
         </div >
