@@ -1,9 +1,7 @@
 import { useState } from "react";
-import NavBar from "./NavBar";
-import NavCompanies from "./Companies/NavCompanies";
-import Companies from "./Companies/Companies";
+import NavBar from "../NavBar";
 
-export default function HomePage() {
+export default function CompanyDetails() {
     const [isScrolled, setIsScrolled] = useState(false);
 
     const handleScroll = (event: React.UIEvent<HTMLDivElement>) => {
@@ -17,8 +15,7 @@ export default function HomePage() {
         >
             <NavBar scroll={isScrolled} />
             <main className="p-4 px-6 pt-1">
-                <NavCompanies title='Empresas' />
-                <Companies />
+                <h1>Comapny Details</h1>
             </main>
         </div >
     )

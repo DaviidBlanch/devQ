@@ -1,4 +1,5 @@
 import { HomeSolidIcon, SearchOutlineIcon } from "../assets/Icons";
+import { Link } from "react-router-dom";
 
 export default function SideBar() {
     return (
@@ -6,14 +7,14 @@ export default function SideBar() {
             <div className="h-full rounded-lg overflow-y-auto bg-[#121212]">
                 <ul className="space-y-2 font-medium py-2 px-3">
                     <li className="py-2 px-3">
-                        <a href="#" className="flex items-center rounded-lg group">
+                        <Link to="/" className="flex items-center rounded-lg group">
                             <HomeSolidIcon />
-                        </a>
+                        </Link>
                     </li>
                     <li className="py-2 px-3">
-                        <a href="#" className="flex items-center rounded-lg group">
+                        <Link to="search" className="flex items-center rounded-lg group">
                             <SearchOutlineIcon />
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </div>
