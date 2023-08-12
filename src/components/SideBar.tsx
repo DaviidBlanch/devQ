@@ -1,4 +1,7 @@
 import { HomeSolidIcon, SearchOutlineIcon } from "../assets/Icons";
+import { Link } from "react-router-dom";
+import CapgeminiLogo from "../assets/images/CapgeminiLogo.webp";
+import NttDataLogo from "../assets/images/NttDataLogo.webp";
 
 export default function SideBar() {
     return (
@@ -6,24 +9,24 @@ export default function SideBar() {
             <div className="h-full rounded-lg overflow-y-auto bg-[#121212]">
                 <ul className="space-y-2 font-medium py-2 px-3">
                     <li className="py-2 px-3">
-                        <a href="#" className="flex items-center rounded-lg group">
+                        <Link to="/" className="flex items-center rounded-lg group">
                             <HomeSolidIcon />
-                        </a>
+                        </Link>
                     </li>
                     <li className="py-2 px-3">
-                        <a href="#" className="flex items-center rounded-lg group">
+                        <Link to="search" className="flex items-center rounded-lg group">
                             <SearchOutlineIcon />
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </div>
             <div className="h-full mt-3 rounded-lg overflow-y-auto bg-[#121212]">
                 <ul className="space-y-2 font-medium py-2 px-3">
                     <li className="py-2 pt-3 px-1 hover:bg-[#2323238c] rounded">
-                        <img src="/images/CapgeminiLogo.webp" className="flex items-center group" alt="Capgemini" />
+                        <img src={CapgeminiLogo} className="flex items-center group rounded" alt="Capgemini" />
                     </li>
                     <li className="py-1 px-1 hover:bg-[#2323238c] rounded">
-                        <img src="/images/NttDataLogo.webp" className="flex items-center group" alt="Ntt Data" />
+                        <img src={NttDataLogo} className="flex items-center group rounded" alt="Ntt Data" />
                     </li>
                 </ul>
             </div>
