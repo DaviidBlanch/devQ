@@ -1,7 +1,7 @@
-import { useState } from "react";
-import NavCompanies from "../Home/Companies/NavCompanies";
-import NavBar from "../Home/NavBar";
 import Background from "../Home/Background";
+import NavBar from "../Home/NavBar";
+import NavCompanies from "../Home/Companies/NavCompanies";
+import { useState } from "react";
 
 export default function SearchPage() {
     const [isScrolled, setIsScrolled] = useState(false);

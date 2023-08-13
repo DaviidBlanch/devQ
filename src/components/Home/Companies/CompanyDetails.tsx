@@ -1,8 +1,8 @@
 import { useState } from "react";
 import NavBar from "../NavBar";
 import CompanyLogo from "../../../assets/images/NttDataLogo.webp";
-import { RedirectIA, FilesIcon } from "../../../assets/Icons";
 import Background from "../Background";
+import { RedirectIA, FilesIcon } from "../../../assets/Icons";
 
 export default function CompanyDetails() {
     const [isScrolled, setIsScrolled] = useState(false);

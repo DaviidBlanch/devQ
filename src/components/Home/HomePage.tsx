@@ -1,8 +1,8 @@
-import { useState } from "react";
+import Background from "./Background";
+import Companies from "./Companies/Companies";
 import NavBar from "./NavBar";
 import NavCompanies from "./Companies/NavCompanies";
-import Companies from "./Companies/Companies";
-import Background from "./Background";
+import { useState } from "react";
 
 export default function HomePage() {
     const [isScrolled, setIsScrolled] = useState(false);

@@ -1,9 +1,9 @@
 import './App.css'
 import CompanyDetails from './components/Home/Companies/CompanyDetails'
 import HomePage from './components/Home/HomePage'
+import { Route, Routes } from 'react-router-dom'
 import SearchPage from './components/Search/SearchPage'
 import SideBar from './components/SideBar'
-import { Route, Routes } from 'react-router-dom'
 
 function App() {
   return (

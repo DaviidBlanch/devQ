@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import Company from "./Company";
+import { Link } from "react-router-dom";
 
 export default function Companies() {
     return (

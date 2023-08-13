@@ -1,6 +1,6 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft, SearchSolidIcon } from "../../assets/Icons";
+import { Link, useLocation } from "react-router-dom";
+import React from "react";
 
 interface Scroll {
     scroll: boolean;
