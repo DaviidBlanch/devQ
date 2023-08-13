@@ -15,7 +15,7 @@ export default function SearchPage() {
         >
             <NavBar scroll={isScrolled} />
             <main className="p-4 px-6 pt-1">
-                <NavCompanies title='Búesquedas recientes' />
+                <NavCompanies title='Búsquedas recientes' />
             </main>
         </div >
     )

@@ -16,9 +16,9 @@ export default function CompanyDetails() {
             onScroll={handleScroll}
         >
             <NavBar scroll={isScrolled} />
-            <main className="p-4 px-6 pt-3">
+            <article className="p-4 px-6 pt-3">
                 <div className="grid grid-cols-2 gap-4">
-                    <div className="flex justify-center">
+                    <section className="flex justify-center">
                         <div className="max-w-xs rounded-lg text-center">
                             <div className="flex items-center justify-center">
                                 <img className="object-cover shadow-lg shadow-black rounded-lg h-auto max-w-full m-0 p-0" src={CompanyLogo} alt="CapeminiLogo" />
@@ -32,9 +32,9 @@ export default function CompanyDetails() {
                                 </a>
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <div className="text-lg text-center text-white">
+                    </section>
+                    <section>
+                        <nav className="relative text-lg text-center text-white">
                             <ul className="lg:flex md:flex border-b border-white lg:w-2/4 md:w-3/4 sm:w-4/5">
                                 <li className="mr-6 mb-1">
                                     <a href="#" className="hover:bg-[#5757578f] rounded-lg inline-block p-1">
@@ -57,7 +57,7 @@ export default function CompanyDetails() {
                                     </a>
                                 </li>
                             </ul>
-                        </div>
+                        </nav>
                         <ul className="list-decimal lg:text-base md:text-base min-[500px]:text-xs min-[500px]:ml-3 pt-3">
                             <li className="mb-3 mt-3 font-semibold">¿Expectativas salariales?</li>
                             <li className="mb-3 font-semibold">¿Por qué has decidido estudiar ingeniería telemática?</li>
@@ -68,9 +68,9 @@ export default function CompanyDetails() {
                             <li className="mb-3 font-semibold">Háblanos un poco de tu antigua empresa y por qué ya no continuas en ella.</li>
                             <li className="mb-3 font-semibold">¿Estás en más procesos de selección?</li>
                         </ul>
-                    </div>
+                    </section>
                 </div>
-            </main>
+            </article>
         </div >
     )
 }
