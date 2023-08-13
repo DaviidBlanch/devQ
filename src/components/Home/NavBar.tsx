@@ -1,10 +1,7 @@
 import { ArrowLeft, SearchSolidIcon } from "../../assets/Icons";
 import { Link, useLocation } from "react-router-dom";
 import React from "react";
-
-interface Scroll {
-    scroll: boolean;
-}
+import { Scroll } from "../interfaces";
 
 const NavBar: React.FC<Scroll> = ({ scroll }) => {
     const location = useLocation();
