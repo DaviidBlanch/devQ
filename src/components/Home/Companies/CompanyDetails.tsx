@@ -2,6 +2,7 @@ import { useState } from "react";
 import NavBar from "../NavBar";
 import CompanyLogo from "../../../assets/images/NttDataLogo.webp";
 import { RedirectIA, FilesIcon } from "../../../assets/Icons";
+import Background from "../Background";
 
 export default function CompanyDetails() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -11,10 +12,7 @@ export default function CompanyDetails() {
     };
 
     return (
-        <div
-            className="relative overflow-y-scroll will-change-scroll h-[calc(100vh-20px)] p-0 pb-0 "
-            onScroll={handleScroll}
-        >
+        <Background handleScroll={handleScroll}>
             <NavBar scroll={isScrolled} />
             <article className="p-4 px-6 pt-3">
                 <div className="grid grid-cols-2 gap-4">
@@ -71,6 +69,6 @@ export default function CompanyDetails() {
                     </section>
                 </div>
             </article>
-        </div >
+        </Background >
     )
 }
