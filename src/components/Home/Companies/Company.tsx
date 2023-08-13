@@ -8,7 +8,7 @@ export default function Company() {
                     <img src={NttData} alt="company" className="object-cover rounded-lg w-full h-full l-0 top-0 shadow-lg shadow-black" />
                 </div>
                 <div className="min-h-full">
-                    <span className="z-1 inline-block max-w-full align-middle lg:text-lg md:text-lg sm:text-lg text-white font-bold">Capgemini</span>
+                    <span className="z-1 inline-block max-w-full align-middle lg:text-lg md:text-lg sm:text-lg text-white font-bold">NttData</span>
                     <div className="lg:text-base sm:text-base text-[#6a6a6a]">Valencia</div>
                 </div>
             </div>
