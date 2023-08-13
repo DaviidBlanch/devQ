@@ -1,6 +1,6 @@
+import CapgeminiLogo from "../assets/images/CapgeminiLogo.webp";
 import { HomeSolidIcon, SearchOutlineIcon } from "../assets/Icons";
 import { Link } from "react-router-dom";
-import CapgeminiLogo from "../assets/images/CapgeminiLogo.webp";
 import NttDataLogo from "../assets/images/NttDataLogo.webp";
 
 export default function SideBar() {
