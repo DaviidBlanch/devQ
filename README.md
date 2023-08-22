@@ -19,6 +19,14 @@ Install axios
 ```
 npm install axios
 ```
+Install eslint
+```
+npm install eslint
+```
+Install react-router-dom
+```
+npm install react-router-dom
+```
 
 Run in dev mode:
 ```
