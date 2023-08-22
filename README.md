@@ -1,5 +1,5 @@
-[![Deploy Pipeline](https://github.com/DaviidBlanch/devQ/actions/workflows/pipeline.yaml/badge.svg)](https://github.com/DaviidBlanch/devQ/actions/workflows/pipeline.yaml)
-# devQ
+# devQ [![Deploy Pipeline](https://github.com/DaviidBlanch/devQ/actions/workflows/pipeline.yaml/badge.svg)](https://github.com/DaviidBlanch/devQ/actions/workflows/pipeline.yaml)
+
 Done by David Blanch
 
 ## About The Project
