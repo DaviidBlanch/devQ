@@ -10,16 +10,29 @@ Install node.js:
 ```
 $ npm install node.js
 ```
+Install Tailwind.css
+```
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+Install axios
+```
+npm install axios
+```
 
 Run in dev mode:
 ```
 $ npm run dev
 ```
+Run build:
+```
+$ npm run build
+```
 
 ### Built With
-- [Node.js](https://nodejs.org/es/docs/)
-- [Express](https://expressjs.com/)
-- [MongoDB](https://www.mongodb.com/)
+- [Vite.js](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind.css](https://flowbite.com/)
 
 ## Contact :mailbox_with_no_mail:
 David Blanch Bellido dablabe98@gmail.com
