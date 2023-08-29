@@ -13,7 +13,7 @@ function App() {
         <div className="fixed w-[82%] lg:w-[92%] md:w-[90%] sm:w-[85%] bg-[#121212] rounded-lg bg-gradient-to-b from-[#0d363f] from-30% via-[#121212] via-50%">
           <Routes>
             <Route path='/' element={<HomePage />} />
-            <Route path='/company/1' element={<CompanyDetails/>} />
+            <Route path='/company/:id' element={<CompanyDetails/>} />
             <Route path='/search' element={<SearchPage />} />
           </Routes>
         </div>
