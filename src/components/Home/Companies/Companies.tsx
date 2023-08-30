@@ -1,40 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
 import Company from "./Company";
 import { Link } from "react-router-dom";
-import { type Posts } from "../../interfaces"
-import { useInfiniteQuery } from "@tanstack/react-query"
-
-const fetchCompany = async ({ pageParam = 1 }: { pageParam?: number }) => {
-
-    return await fetch(`https://devq-backend.onrender.com/devq/posts?currentPage=${pageParam}`)
-        .then(async res => {
-            if (!res.ok) throw new Error('Error en la petición')
-            return await res.json()
-        })
-        .then(res => {
-            const currentPage = Number(res.currentPage)
-            const nextPage = currentPage > (res.totalPosts / 3) ? undefined : currentPage + 1
-            return {
-                posts: res.posts,
-                nextPage,
-                totalPosts: res.totalPosts
-            }
-        })
-
-}
+import { useFetchCompany } from "../../../hooks/posts";
 
 export default function Companies() {
-    const { isLoading, isError, data, fetchNextPage, hasNextPage } = useInfiniteQuery<{ nextPage?: number, posts: Posts[] }>(
-        ['companies'],
-        fetchCompany,
-        {
-            getNextPageParam: (lastPage) => lastPage.nextPage
-        }
-    )
-
-    const posts: Posts[] = data?.pages?.flatMap(page => page.posts) ?? []
+    const { isLoading, isError, posts, fetchNextPage, hasNextPage } = useFetchCompany()
 
     return (
         <>
@@ -52,11 +21,30 @@ export default function Companies() {
 
             {isError && <strong>Ha habido un error</strong>}
 
-            {posts.length === 0 && isLoading && !isError && <strong>No hay resultados</strong>}
+            {posts.length === 0 && !isLoading && !isError && <strong>No hay resultados</strong>}
 
-            {!isLoading && !isError && hasNextPage === true && <button className="p-0" onClick={() => { void fetchNextPage() }}>Mostrar mas</button>}
+            {!isLoading && !isError && hasNextPage === true && (
+                <div className="flex flex-col items-center">
+                    <div className="flex space-x-3 md:mt-3">
+                        <button
+                            onClick={() => { void fetchNextPage() }}
+                            className="inline-flex items-center px-3 py-2 lg:text-sm sm:text-sm font-medium text-center text-white bg-[#252525] rounded-lg hover:bg-[#484848]"
+                        >
+                            Mostrar mas
+                        </button>
+                    </div>
+                </div >
+            )}
 
-            {!isLoading && !isError && hasNextPage === false && <button className="p-0 text-red-600" disabled>Mostrar mas</button>}
+            {!isLoading && !isError && hasNextPage === false && (
+                <div className="flex flex-col items-center">
+                    <div className="flex space-x-3 md:mt-3">
+                        <button className="mx-auto px-3 py-2 lg:text-sm sm:text-sm font-medium text-center text-[#4343437e] bg-[#43434315] rounded-lg" disabled>
+                            Mostrar mas
+                        </button>
+                    </div>
+                </div >
+            )}
         </>
     )
 }

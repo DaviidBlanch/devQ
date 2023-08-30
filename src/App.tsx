@@ -4,6 +4,7 @@ import HomePage from './components/Home/HomePage'
 import { Route, Routes } from 'react-router-dom'
 import SearchPage from './components/Search/SearchPage'
 import SideBar from './components/SideBar'
+import SectionPage from './components/Section/SectionPage'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Route path='/' element={<HomePage />} />
             <Route path='/company/:id' element={<CompanyDetails/>} />
             <Route path='/search' element={<SearchPage />} />
+            <Route path='/section/:country' element={<SectionPage />} />
           </Routes>
         </div>
       </main>

@@ -5,7 +5,6 @@ import { Scroll } from "../interfaces";
 
 const NavBar: React.FC<Scroll> = ({ scroll }) => {
     const location = useLocation();
-    // const { id } = useParams();
 
     const renderNavbarContent = () => {
         if (location.pathname === '/') {
@@ -22,13 +21,11 @@ const NavBar: React.FC<Scroll> = ({ scroll }) => {
                 </div>
             )
         } else if (location.pathname.startsWith('/company/')) {
-            // if (id) {
             return (
                 <>
                     <Link to="/" className="hover:bg-[#121212] rounded-xl p-1"><ArrowLeft /></Link>
                 </>
             )
-            // }
         }
     }
 
