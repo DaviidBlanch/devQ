@@ -1,30 +1,49 @@
 import { ArrowLeft, SearchSolidIcon } from "../../assets/Icons";
-import { Link, useLocation } from "react-router-dom";
-import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Scroll } from "../interfaces";
+import { useEffect, useState } from "react";
 
 const NavBar: React.FC<Scroll> = ({ scroll }) => {
+
+    const history = useNavigate();
     const location = useLocation();
+    const [searchTerm, setSearchTerm] = useState('');
+
+    useEffect(() => {
+        if (location.pathname.startsWith('/search')) {
+            const search = location.pathname.split('/')[2];
+            setSearchTerm(search);
+        }
+    }, [location]);
+
+    const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const newSearchTerm = e.target.value;
+        setSearchTerm(newSearchTerm);
+        history(`/search/${newSearchTerm}`);
+    };
+
+    const handleButtonBack = () => {
+        history(-1);
+    }
+
 
     const renderNavbarContent = () => {
         if (location.pathname === '/') {
             return (
                 <span className="self-center text-2xl font-semibold whitespace-nowrap underline">devQ</span>
             );
-        } else if (location.pathname === '/search') {
+        } else if (location.pathname.startsWith('/search')) {
             return (
                 <div className="relative">
-                    < div className="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none" >
+                    <div className="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none" >
                         <SearchSolidIcon />
                     </div >
-                    <input type="text" autoFocus className=" block p-2 pl-10 text-sm text-white border border-[#121212] rounded-xl w-80 bg-[#121212] focus:outline-none focus:border-transparent" placeholder="Buscar empresa" maxLength={30} />
+                    <input type="text" value={searchTerm} onChange={handleSearch} autoFocus className=" block p-2 pl-10 text-sm text-white border border-[#121212] rounded-xl w-80 bg-[#121212] focus:outline-none focus:border-transparent" placeholder="Buscar empresa" maxLength={30} />
                 </div>
             )
         } else if (location.pathname.startsWith('/company/')) {
             return (
-                <>
-                    <Link to="/" className="hover:bg-[#121212] rounded-xl p-1"><ArrowLeft /></Link>
-                </>
+                <button onClick={handleButtonBack} className="hover:bg-[#121212] rounded-xl p-1"><ArrowLeft /></button>
             )
         }
     }

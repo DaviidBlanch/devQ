@@ -4,10 +4,10 @@ import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 import { fetchCompany, fetchCompanyDetail } from "../services/posts";
 import { Posts } from "../components/interfaces";
 
-export const useFetchCompany = () => {
+export const useFetchCompany = (search: string) => {
     const { isLoading, isError, data, fetchNextPage, hasNextPage } = useInfiniteQuery<{ nextPage?: number, posts: Posts[] }>(
-        ['companies'],
-        fetchCompany,
+        ['companies', search],
+        async ({ pageParam = 1 }) => await fetchCompany({ searchParam: search, pageParam }),
         {
             getNextPageParam: (lastPage) => lastPage.nextPage
         }
@@ -20,7 +20,6 @@ export const useFetchCompany = () => {
         fetchNextPage,
         hasNextPage
     }
-
 }
 
 export const useFetchCompanyDetail = (id: number) => {

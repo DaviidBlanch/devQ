@@ -1,9 +1,13 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import Company from "./Company";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useFetchCompany } from "../../../hooks/posts";
 
 export default function Companies() {
-    const { isLoading, isError, posts, fetchNextPage, hasNextPage } = useFetchCompany()
+    const { search } = useParams();
+    const searchQuery = search || "";
+
+    const { isLoading, isError, posts, fetchNextPage, hasNextPage } = useFetchCompany(searchQuery)
 
     return (
         <>
@@ -30,7 +34,7 @@ export default function Companies() {
                             onClick={() => { void fetchNextPage() }}
                             className="inline-flex items-center px-3 py-2 lg:text-sm sm:text-sm font-medium text-center text-white bg-[#252525] rounded-lg hover:bg-[#484848]"
                         >
-                            Mostrar mas
+                            Mostrar más
                         </button>
                     </div>
                 </div >
@@ -40,7 +44,7 @@ export default function Companies() {
                 <div className="flex flex-col items-center">
                     <div className="flex space-x-3 md:mt-3">
                         <button className="mx-auto px-3 py-2 lg:text-sm sm:text-sm font-medium text-center text-[#4343437e] bg-[#43434315] rounded-lg" disabled>
-                            Mostrar mas
+                            Mostrar más
                         </button>
                     </div>
                 </div >

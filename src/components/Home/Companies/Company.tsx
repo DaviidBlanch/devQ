@@ -6,8 +6,8 @@ interface Props {
 
 export default function Company({ posts }: Props) {
     return (
-        < div className="bg-[#181818] p-4 w-full h-[300px] rounded-lg hover:bg-[#252525] cursor-pointer flex flex-col" >
-            <div className="mb-4 flex justify-center">
+        < div className="bg-[#181818] p-4 w-full h-[290px] rounded-lg hover:bg-[#252525] cursor-pointer flex flex-col" >
+            <div className="mb-3 flex justify-center">
                 <img src={posts.image} alt={posts.company} className="object-contain w-32 h-32 md:w-48 md:h-48 rounded-lg shadow-lg" />
             </div>
             <div className="pl-2">
