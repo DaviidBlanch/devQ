@@ -40,15 +40,7 @@ export default function Companies() {
                 </div >
             )}
 
-            {!isLoading && !isError && hasNextPage === false && (
-                <div className="flex flex-col items-center">
-                    <div className="flex space-x-3 md:mt-3">
-                        <button className="mx-auto px-3 py-2 lg:text-sm sm:text-sm font-medium text-center text-[#4343437e] bg-[#43434315] rounded-lg" disabled>
-                            Mostrar más
-                        </button>
-                    </div>
-                </div >
-            )}
+            {!isLoading && !isError && hasNextPage === false && <></>}
         </>
     )
 }
