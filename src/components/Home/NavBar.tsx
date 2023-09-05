@@ -1,4 +1,4 @@
-import { ArrowLeft, SearchSolidIcon } from "../../assets/Icons";
+import { AddPostIcon, ArrowLeft, SearchSolidIcon } from "../../assets/Icons";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Scroll } from "../interfaces";
 import { useEffect, useState } from "react";
@@ -38,12 +38,12 @@ const NavBar: React.FC<Scroll> = ({ scroll }) => {
                     <div className="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none" >
                         <SearchSolidIcon />
                     </div >
-                    <input type="text" value={searchTerm} onChange={handleSearch} autoFocus className=" block p-2 pl-10 text-sm text-white border border-[#121212] rounded-xl w-80 bg-[#121212] focus:outline-none focus:border-transparent" placeholder="Buscar empresa" maxLength={30} />
+                    <input type="text" value={searchTerm || ''} onChange={handleSearch} autoFocus className=" block p-2 pl-10 text-sm text-white border border-[#121212] rounded-xl w-80 bg-[#121212] focus:outline-none focus:border-transparent" placeholder="Buscar empresa" maxLength={30} />
                 </div>
             )
         } else if (location.pathname.startsWith('/company/')) {
             return (
-                <button onClick={handleButtonBack} className="hover:bg-[#121212] rounded-xl p-1"><ArrowLeft /></button>
+                <button onClick={handleButtonBack} className="hover:bg-[#121212] rounded-full p-1"><ArrowLeft /></button>
             )
         }
     }
@@ -52,8 +52,12 @@ const NavBar: React.FC<Scroll> = ({ scroll }) => {
         <header className={`sticky w-auto z-20 top-0 left-0 px-6 py-3 rounded-t-lg transition-colors: duration-1000 ${scroll ? "bg-[#0d363f]" : "bg-transparent"}`}>
             <nav className=" max-w-screen-xl flex flex-wrap items-center justify-between mx-auto pl-0">
                 {renderNavbarContent()}
-                <div>
-                    <button type="button" className="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300" aria-expanded="false" data-dropdown-toggle="dropdown-user">
+                <div className="inline-flex">
+                    <button className="bg-[#121212e4] rounded-full px-3 mr-3 inline-flex items-center transform transition-transform hover:scale-105">
+                        <AddPostIcon />
+                        <span className="ml-1 text-[14px]">Añadir posts</span>
+                    </button>
+                    <button type="button" className="flex text-sm rounded-full" aria-expanded="false" data-dropdown-toggle="dropdown-user">
                         <img className="w-8 h-8 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo" />
                     </button>
                 </div>
