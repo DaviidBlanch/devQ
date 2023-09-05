@@ -26,7 +26,6 @@ const NavBar: React.FC<Scroll> = ({ scroll }) => {
         history(-1);
     }
 
-
     const renderNavbarContent = () => {
         if (location.pathname === '/') {
             return (
