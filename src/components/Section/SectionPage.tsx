@@ -1,10 +1,9 @@
 import Background from "../Home/Background";
-import NavBar from "../Home/NavBar";
-import NavCompanies from "../Home/Companies/NavCompanies";
-import { useState } from "react";
 import Companies from "../Home/Companies/Companies";
+import NavBar from "../Home/NavBar";
+import { useState } from "react";
 
-export default function SearchPage() {
+export default function SectionPage() {
     const [isScrolled, setIsScrolled] = useState(false);
 
     const handleScroll = (event: React.UIEvent<HTMLDivElement>) => {
@@ -13,10 +12,7 @@ export default function SearchPage() {
     return (
         <Background handleScroll={handleScroll}>
             <NavBar scroll={isScrolled} />
-            <main className="p-4 px-6 pt-1">
-                <NavCompanies title='Búsquedas recientes' />
-                <Companies />
-            </main>
+            <Companies/>
         </Background >
     )
 }
