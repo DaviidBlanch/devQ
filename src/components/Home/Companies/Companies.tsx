@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import Company from "./Company";
 import { Link, useParams } from "react-router-dom";
 import { useFetchCompany } from "../../../hooks/posts";
