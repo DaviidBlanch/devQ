@@ -17,12 +17,7 @@ Install dependencies
 ```
 npm install
 ```
-
-## Usage
-### Development Mode
-To run the project in development mode, use the following command:
-
-Run in dev mode:
+Run the application locally:
 ```
 $ npm run dev
 ```
