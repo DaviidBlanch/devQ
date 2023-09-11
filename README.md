@@ -6,13 +6,12 @@
 ## About The Project
 Welcome to devQ, your go-to resource for technical interview questions and insightful developer interviews. Whether you're preparing for a job interview or simply aiming to expand your knowledge, devQ provides a comprehensive platform tailored to the developer community.
 
-## Getting Started
-### Prerequisites
+## Prerequisites
 Before you start, make sure you have the following software installed:
 - [Node.js](https://nodejs.org/) - JavaScript runtime
 - [npm](https://www.npmjs.com/) - Package manager
 
-### Getting started 🚀
+## Getting started 🚀
 
 Install dependencies
 ```
