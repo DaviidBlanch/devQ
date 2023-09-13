@@ -2,12 +2,14 @@ import { AddPostIcon, ArrowLeft, SearchSolidIcon } from "../../assets/Icons";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Scroll } from "../interfaces";
 import { useEffect, useState } from "react";
+import { useSidePanel } from "../../useContexts.tsx/SidePanelContext";
 
 const NavBar: React.FC<Scroll> = ({ scroll }) => {
 
     const history = useNavigate();
     const location = useLocation();
     const [searchTerm, setSearchTerm] = useState('');
+    const { isSidePanelOpen, toggleSidePanel } = useSidePanel();
 
     useEffect(() => {
         if (location.pathname.startsWith('/search')) {
@@ -17,6 +19,7 @@ const NavBar: React.FC<Scroll> = ({ scroll }) => {
     }, [location]);
 
     const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+        e.preventDefault();
         const newSearchTerm = e.target.value;
         setSearchTerm(newSearchTerm);
         history(`/search/${newSearchTerm}`);
@@ -52,10 +55,15 @@ const NavBar: React.FC<Scroll> = ({ scroll }) => {
             <nav className=" max-w-screen-xl flex flex-wrap items-center justify-between mx-auto pl-0">
                 {renderNavbarContent()}
                 <div className="inline-flex">
-                    <button className="bg-[#121212e4] rounded-full px-3 mr-3 inline-flex items-center transform transition-transform hover:scale-105">
-                        <AddPostIcon />
-                        <span className="ml-1 text-[14px]">Añadir posts</span>
-                    </button>
+                    {!isSidePanelOpen && (
+                        <button
+                            className="bg-[#121212e4] rounded-full px-3 mr-3 inline-flex items-center transform transition-transform hover:scale-105"
+                            onClick={toggleSidePanel}
+                        >
+                            <AddPostIcon />
+                            <span className="ml-1 text-[14px]">Añadir posts</span>
+                        </button>
+                    )}
                     <button type="button" className="flex text-sm rounded-full" aria-expanded="false" data-dropdown-toggle="dropdown-user">
                         <img className="w-8 h-8 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo" />
                     </button>
