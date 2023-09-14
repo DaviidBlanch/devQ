@@ -1,10 +1,8 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/await-thenable */
 import { CloseIcon } from "../../assets/Icons";
 import loginService from "../../services/login";
-import { useSidePanel } from "../../useContexts.tsx/SidePanelContext";
 import { useState } from "react";
 
 const Login = () => {
@@ -12,7 +10,6 @@ const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [user, setUser] = useState([]);
-    const { toggleSidePanel } = useSidePanel();
 
     const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -35,7 +32,6 @@ const Login = () => {
     return (
         <>
             <button
-                onClick={toggleSidePanel}
             >
                 <CloseIcon />
             </button>
