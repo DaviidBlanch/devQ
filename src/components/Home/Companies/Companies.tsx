@@ -10,7 +10,8 @@ export default function Companies() {
 
     return (
         <>
-            {posts.length > 0 &&
+            {
+                posts.length > 0 &&
                 <article className="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 min-[500px]:grid-cols-2 gap-4 mb-4">
                     {posts.map((post) => (
                         <Link key={post.id} to={`/company/${post.id}`}>
@@ -26,18 +27,20 @@ export default function Companies() {
 
             {posts.length === 0 && !isLoading && !isError && <strong>No hay resultados</strong>}
 
-            {!isLoading && !isError && hasNextPage === true && (
-                <div className="flex flex-col items-center">
-                    <div className="flex space-x-3 md:mt-3">
-                        <button
-                            onClick={() => { void fetchNextPage() }}
-                            className="inline-flex items-center px-3 py-2 lg:text-sm sm:text-sm font-medium text-center text-white bg-[#252525] rounded-lg hover:bg-[#484848]"
-                        >
-                            Mostrar más
-                        </button>
-                    </div>
-                </div >
-            )}
+            {
+                !isLoading && !isError && hasNextPage === true && (
+                    <div className="flex flex-col items-center">
+                        <div className="flex space-x-3 md:mt-3">
+                            <button
+                                onClick={() => { void fetchNextPage() }}
+                                className="inline-flex items-center px-3 py-2 lg:text-sm sm:text-sm font-medium text-center text-white bg-zinc-500/5 rounded-lg hover:bg-zinc-500/20"
+                            >
+                                Mostrar más
+                            </button>
+                        </div>
+                    </div >
+                )
+            }
 
             {!isLoading && !isError && hasNextPage === false && <></>}
         </>

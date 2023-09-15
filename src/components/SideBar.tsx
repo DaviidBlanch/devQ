@@ -5,27 +5,27 @@ import NttDataLogo from "../assets/images/NttDataLogo.webp";
 
 export default function SideBar() {
     return (
-        <nav className="fixed top-2 left-2 z-40 w-[75px]">
-            <div className="h-full rounded-lg overflow-y-auto bg-[#121212]">
-                <ul className="space-y-2 font-medium py-2 px-3">
-                    <li className="py-2 px-3 rounded-lg hover:bg-[#2323238c]">
-                        <Link to="/" className="flex items-center rounded-lg group">
+        <nav className="flex flex-col flex-1 gap-2">
+            <div className="bg-zinc-900 rounded-lg">
+                <ul>
+                    <li className="flex gap-4 text-zinc-400 py-3.5 px-6">
+                        <Link to="/">
                             <HomeSolidIcon />
                         </Link>
                     </li>
-                    <li className="py-2 px-3 rounded-lg hover:bg-[#2323238c]">
-                        <Link to="search" className="flex items-center rounded-lg group">
+                    <li className="flex gap-4 text-zinc-400 py-3.5 px-6">
+                        <Link to="search">
                             <SearchOutlineIcon />
                         </Link>
                     </li>
                 </ul>
             </div>
-            <div className="h-full mt-3 rounded-lg overflow-y-auto bg-[#121212]">
-                <ul className="space-y-2 font-medium py-2 px-3">
-                    <li className="py-2 pt-3 px-1 hover:bg-[#2323238c] rounded-lg">
+            <div className="bg-zinc-900 rounded-lg flex-1 p-2">
+                <ul>
+                    <li className="py-2 pt-3 px-1 gap-4 hover:bg-[#2323238c] rounded-lg">
                         <img src={CapgeminiLogo} className="flex items-center group rounded" alt="Capgemini" />
                     </li>
-                    <li className="py-1 px-1 hover:bg-[#2323238c] rounded-lg">
+                    <li className="py-1 px-1 flex gap-4 hover:bg-[#2323238c] rounded-lg">
                         <img src={NttDataLogo} className="flex items-center group rounded" alt="Ntt Data" />
                     </li>
                 </ul>

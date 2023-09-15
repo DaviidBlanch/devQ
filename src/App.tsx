@@ -8,21 +8,21 @@ import SectionPage from './components/Section/SectionPage'
 
 function App() {
   return (
-    <div>
-      <SideBar />
-      <main className="p-2 pr-3 ml-[85px] sm:ml-[85px]">
-        <div className="fixed lg:w-[92%] md:w-[90%] sm:w-[85%] bg-[#121212] rounded-lg bg-gradient-to-b from-[#0d363f] from-30% via-[#121212] via-50%">
-          <Routes>
-            <Route path='/' element={<HomePage />} />
-            <Route path='/company/:id' element={<CompanyDetails />} />
-            <Route path='/search' element={<SearchPage />}>
-              <Route path='/search/:search' element={<SearchPage />} />
-            </Route>
-            <Route path='/section/:country' element={<SectionPage />} />
-          </Routes>
-        </div>
-      </main>
-    </div>
+    <main className="relative h-screen p-2 gap-2 flex items-stretch">
+      <div className="w-[6%] flex-col hidden lg:flex overflow-y-auto">
+        <SideBar />
+      </div>
+      <div className="rounded-lg bg-zinc-900 flex-1 mx-auto overflow-y-auto">
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/company/:id' element={<CompanyDetails />} />
+          <Route path='/search' element={<SearchPage />}>
+            <Route path='/search/:search' element={<SearchPage />} />
+          </Route>
+          <Route path='/section/:country' element={<SectionPage />} />
+        </Routes>
+      </div>
+    </main>
   )
 }
 
