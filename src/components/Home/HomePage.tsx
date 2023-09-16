@@ -1,6 +1,6 @@
 import Background from "./Background";
 import Companies from "./Companies/Companies";
-import NavBar from "./NavBar";
+import NavBar from "../Header/NavBar";
 import NavCompanies from "./Companies/NavCompanies";
 import { useState } from "react";
 

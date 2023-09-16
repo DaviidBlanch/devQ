@@ -1,5 +1,5 @@
 import './App.css'
-import CompanyDetails from './components/Home/Companies/CompanyDetails'
+import CompanyDetails from './components/Home/CompanyDetail/CompanyDetails'
 import HomePage from './components/Home/HomePage'
 import { Route, Routes } from 'react-router-dom'
 import SearchPage from './components/Search/SearchPage'
