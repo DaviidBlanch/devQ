@@ -1,18 +1,20 @@
 import Company from "./Company";
 import { Link, useParams } from "react-router-dom";
 import { useFetchCompany } from "../../../hooks/posts";
+import { usePanel } from "../../../useContext/PanelProvider";
 
 export default function Companies() {
     const { search } = useParams();
     const searchQuery = search || "";
 
     const { isLoading, isError, posts, fetchNextPage, hasNextPage } = useFetchCompany(searchQuery)
+    const { isPanel } = usePanel()
 
     return (
         <>
             {
                 posts.length > 0 &&
-                <article className="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 min-[500px]:grid-cols-2 gap-4 mb-4">
+                <article className={`grid ${isPanel ? 'lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 min-[500px]:grid-cols-1' : 'lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 min-[500px]:grid-cols-2'} md:grid-cols-4 sm:grid-cols-3 min-[500px]:grid-cols-2 gap-4 mb-4`}>
                     {posts.map((post) => (
                         <Link key={post.id} to={`/company/${post.id}`}>
                             <Company posts={post} />
