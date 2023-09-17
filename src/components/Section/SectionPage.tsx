@@ -1,6 +1,6 @@
 import Background from "../Home/Background";
 import Companies from "../Home/Companies/Companies";
-import NavBar from "../Home/NavBar";
+import NavBar from "../Header/NavBar";
 import { useState } from "react";
 
 export default function SectionPage() {

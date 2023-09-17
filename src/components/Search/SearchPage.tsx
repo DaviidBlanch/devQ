@@ -1,5 +1,5 @@
 import Background from "../Home/Background";
-import NavBar from "../Home/NavBar";
+import NavBar from "../Header/NavBar";
 import NavCompanies from "../Home/Companies/NavCompanies";
 import { useState } from "react";
 import Companies from "../Home/Companies/Companies";
@@ -14,7 +14,7 @@ export default function SearchPage() {
         <Background handleScroll={handleScroll}>
             <NavBar scroll={isScrolled} />
             <main className="p-4 px-6 pt-1">
-                <NavCompanies title='Búsquedas recientes' />
+                <NavCompanies title='Última búsqueda' />
                 <Companies />
             </main>
         </Background >
