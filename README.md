@@ -6,37 +6,18 @@
 ## About The Project
 Welcome to devQ, your go-to resource for technical interview questions and insightful developer interviews. Whether you're preparing for a job interview or simply aiming to expand your knowledge, devQ provides a comprehensive platform tailored to the developer community.
 
-## Getting Started
-### Prerequisites
+## Prerequisites
 Before you start, make sure you have the following software installed:
 - [Node.js](https://nodejs.org/) - JavaScript runtime
 - [npm](https://www.npmjs.com/) - Package manager
 
-### Installation
-Follow these steps to set up the project locally:
+## Getting started 🚀
 
-Install Tailwind.css
+Install dependencies
 ```
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
+npm install
 ```
-Install axios
-```
-npm install axios
-```
-Install eslint
-```
-npm install eslint
-```
-Install react-router-dom
-```
-npm install react-router-dom
-```
-## Usage
-### Development Mode
-To run the project in development mode, use the following command:
-
-Run in dev mode:
+Run the application locally:
 ```
 $ npm run dev
 ```
