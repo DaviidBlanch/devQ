@@ -20,9 +20,7 @@ const AuthContext = createContext<AuthContextInterface | undefined>(undefined);
 // eslint-disable-next-line react-refresh/only-export-components
 export function useAuth(): AuthContextInterface {
     const context = useContext(AuthContext);
-    if (!context) {
-        throw new Error('useAuth debe usarse dentro de un AuthProvider');
-    }
+    if (!context) throw new Error('useAuth debe usarse dentro de un AuthProvider');
     return context;
 }
 

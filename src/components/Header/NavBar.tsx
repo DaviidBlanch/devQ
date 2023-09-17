@@ -1,14 +1,18 @@
-import {  ArrowLeft, SearchSolidIcon } from "../../assets/Icons";
+import { ArrowLeft, SearchSolidIcon, UserProfileIcon } from "../../assets/Icons";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Scroll } from "../interfaces";
 import { useEffect, useState } from "react";
-import Login from "../Login/Login";
+import { usePanel } from "../../useContext/PanelProvider";
+import { useAuth } from "../../useContext/AuthProvider";
+import Profile from "../Profile/Profile";
 
 const NavBar: React.FC<Scroll> = ({ scroll }) => {
 
     const history = useNavigate();
     const location = useLocation();
     const [searchTerm, setSearchTerm] = useState('');
+    const { isPanel, togglePanel } = usePanel()
+    const { user } = useAuth()
 
     useEffect(() => {
         if (location.pathname.startsWith('/search')) {
@@ -49,14 +53,21 @@ const NavBar: React.FC<Scroll> = ({ scroll }) => {
         }
     }
 
+    console.log(user);
+
     return (
         <header className={`sticky w-auto z-20 top-0 left-0 px-6 py-3 rounded-t-lg transition-colors: duration-1000 ${scroll ? "bg-[#0d363f]" : "bg-transparent"}`}>
             <nav className=" max-w-screen-xl flex flex-wrap items-center justify-between mx-auto pl-0">
                 {renderNavbarContent()}
-                <Login />
+                {user && <>{isPanel ? <Profile /> : <Profile />}</>}
+                {!isPanel && !user && (
+                    <button onClick={togglePanel} className="bg-[#121212e4] p-1 rounded-full px-3 mr-3 inline-flex items-center transform transition-transform hover:scale-105">
+                        <UserProfileIcon />
+                        <span className="ml-1 text-[14px]">Iniciar sesión</span>
+                    </button>
+                )}
             </nav>
         </header >
     )
 }
-
 export default NavBar;

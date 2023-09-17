@@ -1,23 +1,15 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import loginService from "../../services/login";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useAuth } from "../../useContext/AuthProvider";
-import Profile from "../Profile/Profile";
 
 const Login = () => {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const { user, login } = useAuth()
-
-    useEffect(() => {
-        const user = window.localStorage.getItem('user')
-        if (user) {
-            login(JSON.parse(user))
-        }
-    }, [])
 
     const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -62,11 +54,7 @@ const Login = () => {
 
     return (
         <>
-            {
-                user
-                    ? <Profile/>
-                    : renderLoginForm()
-            }
+            {!user && renderLoginForm()}
         </>
     );
 };
