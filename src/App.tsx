@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import './App.css'
 import CompanyDetails from './components/Home/CompanyDetail/CompanyDetails'
