@@ -53,8 +53,6 @@ const NavBar: React.FC<Scroll> = ({ scroll }) => {
         }
     }
 
-    console.log(user);
-
     return (
         <header className={`sticky w-auto z-20 top-0 left-0 px-6 py-3 rounded-t-lg transition-colors: duration-1000 ${scroll ? "bg-[#0d363f]" : "bg-transparent"}`}>
             <nav className=" max-w-screen-xl flex flex-wrap items-center justify-between mx-auto pl-0">
