@@ -10,7 +10,7 @@ export const fetchCompany = async ({ pageParam = 1, searchParam }: { pageParam?:
         })
         .then(res => {
             const currentPage = Number(res.currentPage)
-            const nextPage = currentPage > (res.currentPosts / 5) ? undefined : currentPage + 1
+            const nextPage = currentPage > (res.totalPosts / 5) ? undefined : currentPage + 1
             return {
                 posts: res.posts,
                 nextPage,

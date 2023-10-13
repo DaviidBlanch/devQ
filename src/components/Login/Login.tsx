@@ -31,25 +31,44 @@ const Login = () => {
     }
 
     const renderLoginForm = () => (
-        <form onSubmit={handleLogin} >
-            <input
-                className="text-black"
-                type="text"
-                value={username}
-                name="Username"
-                placeholder="Username"
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setUsername(e.target.value) }}
-            />
-            <input
-                className="text-black"
-                type="password"
-                value={password}
-                name="Password"
-                placeholder="Password"
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setPassword(e.target.value) }}
-            />
-            <button type="submit">Login</button>
-        </form >
+        <form
+            onSubmit={handleLogin}
+            className="max-w-sm mx-auto mt-20 p-8 rounded-lg shadow-lg border-solid border-[1px] border-[#121212b0]"
+        >
+            <fieldset className="mb-4">
+                <label className="block text-white font-semibold mb-2">Nombre de usuario</label>
+                <input
+                    className="w-full px-3 py-2 rounded border-[1.5px] border-gray-600 bg-[#121212] text-white"
+                    type="text"
+                    value={username}
+                    name="Username"
+                    placeholder="Nombre de usuario"
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                        setUsername(e.target.value);
+                    }}
+                />
+            </fieldset>
+            <fieldset className="mb-4">
+                <label className="block text-white font-semibold mb-2">Contraseña</label>
+                <input
+                    className="w-full px-3 py-2 rounded border-[1.5px] border-gray-600 bg-[#121212] text-white"
+                    type="password"
+                    value={password}
+                    name="Password"
+                    placeholder="Contraseña"
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                        setPassword(e.target.value);
+                    }}
+                />
+            </fieldset>
+            <button
+                type="submit"
+                className="w-full py-2 bg-[#0d363f] text-white font-semibold rounded-full transform transition-transform hover:scale-105"
+            >
+                Iniciar sesión
+            </button>
+        </form>
+
     )
 
     return (

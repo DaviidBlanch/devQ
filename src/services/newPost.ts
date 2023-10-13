@@ -10,7 +10,7 @@ interface CompanyData {
     country: string;
     city: string;
     experience: string;
-    questions: string;
+    questions: string[];
 }
 
 
@@ -22,6 +22,7 @@ export const postCompany = async (companyData: CompanyData) => {
     }
 
     const { token } = JSON.parse(userString);
+    console.log(JSON.stringify(companyData))
 
     if (!token) {
         throw new Error('Token no está definido. Asegúrate de llamar a setToken antes de realizar la solicitud.');
@@ -31,7 +32,7 @@ export const postCompany = async (companyData: CompanyData) => {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': token
+            'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify(companyData)
     });
@@ -41,10 +42,6 @@ export const postCompany = async (companyData: CompanyData) => {
     }
 
     const responseData = await response.json();
-
-    if (!responseData.success) {
-        throw new Error(responseData.message);
-    }
 
     return responseData;
 }
