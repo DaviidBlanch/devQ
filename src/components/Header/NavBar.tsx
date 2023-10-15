@@ -35,7 +35,7 @@ const NavBar: React.FC<Scroll> = ({ scroll }) => {
     const renderNavbarContent = () => {
         if (location.pathname === '/') {
             return (
-                <span className="self-center text-2xl font-semibold whitespace-nowrap underline">devQ</span>
+                <span className="self-center text-2xl font-semibold whitespace-nowrap underline">TechQnA</span>
             );
         } else if (location.pathname.startsWith('/search')) {
             return (

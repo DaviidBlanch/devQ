@@ -49,7 +49,7 @@ export default function CompanyDetails() {
                                             <span>{post.description}</span>
                                         </div>
                                         <p className="mt-1">
-                                            <span className="text-white">{post.questions.length === 1 ? `${post.questions.length} pregunta` : `${post.questions.length} preguntas`} - {post.create_date}</span>
+                                            <span className="text-white">{post.create_date} - {post.questions.length === 1 ? `${post.questions.length} pregunta` : `${post.questions.length} preguntas`}</span>
                                         </p>
                                     </div>
                                 </div>

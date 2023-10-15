@@ -43,10 +43,10 @@ const Profile = () => {
                 <img className="w-8 h-8 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo" />
             </button>
             {isOpen && (
-                <div className="z-10 absolute right-0 mt-2 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                <div className="z-10 absolute right-0 mt-2 text-base list-none bg-[#282828] rounded-lg shadow-md w-44">
                     <ul className="py-3">
                         <li className="flex justify-between">
-                            <span className="px-3 text-gray-400 text-sm">{user?.username}</span>
+                            <span className="px-3 text-white text-sm">{user?.username}</span>
                             <button
                                 className="px-3 inline-flex items-center transform transition-transform hover:scale-105"
                                 onClick={() => setIsOpen(!isOpen)}
@@ -60,7 +60,7 @@ const Profile = () => {
                                 className="px-3 mr-3 inline-flex items-center transform transition-transform hover:scale-105"
                             >
                                 <AddPostIcon />
-                                <span className="ml-1 text-[14px] text-black font-semibold">Añadir posts</span>
+                                <span className="ml-1 text-[14px] text-white font-semibold">Añadir posts</span>
                             </button>
                         </li>
                         <li>

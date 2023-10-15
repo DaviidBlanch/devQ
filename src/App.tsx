@@ -27,10 +27,10 @@ function App() {
   }, [])
 
   return (
-    <main className={`relative h-screen p-2 ${isPanel ? 'gap-3' : 'gap-2'} flex items-stretch`}>
-      <div className="w-[6%] flex-col hidden lg:flex overflow-y-auto">
+    <div className={`relative h-screen p-2 ${isPanel ? 'gap-3' : 'gap-2'} flex items-stretch`}>
+      <aside className="flex-col lg:flex overflow-y-scroll">
         <SideBar />
-      </div>
+      </aside>
       <div className="rounded-lg bg-zinc-900 flex-1 mx-auto overflow-y-auto">
         <Routes>
           <Route path='/' element={<HomePage />} />
@@ -47,7 +47,7 @@ function App() {
           {user ? <AddCompany /> : <Login />}
         </div>
       )}
-    </main>
+    </div>
   )
 }
 
