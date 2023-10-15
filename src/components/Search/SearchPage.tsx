@@ -14,7 +14,7 @@ export default function SearchPage() {
         <Background handleScroll={handleScroll}>
             <NavBar scroll={isScrolled} />
             <main className="p-4 px-6 pt-1">
-                <NavCompanies title='Última búsqueda' />
+                <NavCompanies title='Empresas' />
                 <Companies />
             </main>
         </Background >

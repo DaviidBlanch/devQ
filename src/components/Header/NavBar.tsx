@@ -1,4 +1,4 @@
-import { ArrowLeft, SearchSolidIcon, UserProfileIcon } from "../../assets/Icons";
+import { ArrowLeft, SearchSolidIcon, TitleIcon, UserProfileIcon } from "../../assets/Icons";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Scroll } from "../interfaces";
 import { useEffect, useState } from "react";
@@ -35,7 +35,12 @@ const NavBar: React.FC<Scroll> = ({ scroll }) => {
     const renderNavbarContent = () => {
         if (location.pathname === '/') {
             return (
-                <span className="self-center text-2xl font-semibold whitespace-nowrap underline">TechQnA</span>
+                <div className="flex items-center justify-center">
+                    <span className="text-2xl font-semibold flex items-center">
+                        <TitleIcon />
+                        <span className="ml-2">TechQnA</span>
+                    </span>
+                </div>
             );
         } else if (location.pathname.startsWith('/search')) {
             return (
