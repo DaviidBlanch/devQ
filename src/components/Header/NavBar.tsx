@@ -38,7 +38,7 @@ const NavBar: React.FC<Scroll> = ({ scroll }) => {
                 <div className="flex items-center justify-center">
                     <span className="text-2xl font-semibold flex items-center">
                         <TitleIcon />
-                        <span className="ml-2">TechQnA</span>
+                        <span className="ml-2">devQ</span>
                     </span>
                 </div>
             );

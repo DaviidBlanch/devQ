@@ -28,10 +28,10 @@ function App() {
 
   return (
     <div className={`relative h-screen p-2 ${isPanel ? 'gap-3' : 'gap-2'} flex items-stretch`}>
-      <aside className="flex-col lg:flex overflow-y-scroll">
+      <aside className="flex-col flex overflow-y-auto">
         <SideBar />
       </aside>
-      <div className="rounded-lg bg-zinc-900 flex-1 mx-auto overflow-y-auto">
+      <main className="rounded-lg bg-zinc-900 flex-1 overflow-y-auto">
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/company/:id' element={<CompanyDetails />} />
@@ -40,7 +40,7 @@ function App() {
           </Route>
           <Route path='/section/:country' element={<SectionPage />} />
         </Routes>
-      </div>
+      </main>
       {isPanel && (
         <div className="rounded-lg bg-zinc-900 w-2/6 mx-auto overflow-y-auto p-4">
           <NavBarPanel />
