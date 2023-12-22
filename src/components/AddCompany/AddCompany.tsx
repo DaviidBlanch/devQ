@@ -29,7 +29,7 @@ function AddCompany() {
             })
             return { previousCompany }
         },
-        onError: (error, newCompany, context) => {
+        onError: (_error, _newCompany, context) => {
             if (context?.previousCompany !== null) {
                 queryClient.setQueryData(['companies'], context?.previousCompany)
             }
