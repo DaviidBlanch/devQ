@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { useState } from "react";
 import NavBar from "../../Header/NavBar";
 import Background from "../Background";

@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/await-thenable */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { postCompany } from "../../services/newPost";
 import { PlusIcon } from "../../assets/Icons";

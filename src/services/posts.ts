@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 export const fetchCompany = async ({ pageParam = 1, searchParam }: { pageParam?: number, searchParam: string }) => {
 
     return await fetch(`https://devq-backend.onrender.com/devq/posts?search=${searchParam}&currentPage=${pageParam}`)

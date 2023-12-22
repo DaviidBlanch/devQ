@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-misused-promises */
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import loginService from "../../services/login";
 import { useState } from "react";
 import { useAuth } from "../../useContext/AuthProvider";
