@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 import { fetchCompany, fetchCompanyDetail } from "../services/posts";
 import { Posts } from "../components/interfaces";

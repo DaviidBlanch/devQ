@@ -13,6 +13,12 @@ interface AuthProviderProps {
 interface User {
     username: string;
     password: string;
+    posts: Posts[] | undefined;
+}
+interface Posts {
+    id: number;
+    image: string;
+    company: string;
 }
 
 const AuthContext = createContext<AuthContextInterface | undefined>(undefined);

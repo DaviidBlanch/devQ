@@ -1,4 +1,4 @@
-import { ArrowLeft, SearchSolidIcon, UserProfileIcon } from "../../assets/Icons";
+import { ArrowLeft, SearchSolidIcon, TitleIcon, UserProfileIcon } from "../../assets/Icons";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Scroll } from "../interfaces";
 import { useEffect, useState } from "react";
@@ -35,7 +35,12 @@ const NavBar: React.FC<Scroll> = ({ scroll }) => {
     const renderNavbarContent = () => {
         if (location.pathname === '/') {
             return (
-                <span className="self-center text-2xl font-semibold whitespace-nowrap underline">devQ</span>
+                <div className="flex items-center justify-center">
+                    <span className="text-2xl font-semibold flex items-center">
+                        <TitleIcon />
+                        <span className="ml-2">devQ</span>
+                    </span>
+                </div>
             );
         } else if (location.pathname.startsWith('/search')) {
             return (
@@ -43,7 +48,7 @@ const NavBar: React.FC<Scroll> = ({ scroll }) => {
                     <div className="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none" >
                         <SearchSolidIcon />
                     </div >
-                    <input type="text" value={searchTerm || ''} onChange={handleSearch} autoFocus className=" block p-2 pl-10 text-sm text-white border border-[#121212] rounded-xl w-80 bg-[#121212] focus:outline-none focus:border-transparent" placeholder="Buscar empresa" maxLength={30} />
+                    <input type="text" value={searchTerm || ''} onChange={handleSearch} autoFocus className="block p-2 pl-10 text-sm text-white border border-[#121212] rounded-xl w-max bg-[#121212] focus:outline-none focus:border-transparent" placeholder="Buscar empresa" maxLength={30} />
                 </div>
             )
         } else if (location.pathname.startsWith('/company/')) {
@@ -53,11 +58,9 @@ const NavBar: React.FC<Scroll> = ({ scroll }) => {
         }
     }
 
-    console.log(user);
-
     return (
         <header className={`sticky w-auto z-20 top-0 left-0 px-6 py-3 rounded-t-lg transition-colors: duration-1000 ${scroll ? "bg-[#0d363f]" : "bg-transparent"}`}>
-            <nav className=" max-w-screen-xl flex flex-wrap items-center justify-between mx-auto pl-0">
+            <nav className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto pl-0">
                 {renderNavbarContent()}
                 {user && <>{isPanel ? <Profile /> : <Profile />}</>}
                 {!isPanel && !user && (
